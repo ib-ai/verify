@@ -1,0 +1,19 @@
+{
+  "name": "ibai-verify",
+  "version": "1.0.0",
+  "description": "Work in progress standalone verification website.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ib-ai/Verify.git"
+  },
+  "author": "Arraying",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ib-ai/Verify/issues"
+  },
+  "homepage": "https://github.com/ib-ai/Verify#readme"
+}
