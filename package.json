@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ib-ai/Verify/issues"
   },
-  "homepage": "https://github.com/ib-ai/Verify#readme"
+  "homepage": "https://github.com/ib-ai/Verify#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
