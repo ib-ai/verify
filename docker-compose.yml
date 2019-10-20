@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  app:
+    build: .
+    image: app
+    ports:
+    - '80:80'
+    env_file: details.env
+  redis:
+    image: redis
+    volumes:
+    - 'redis:/data'
+volumes:
+  redis:
