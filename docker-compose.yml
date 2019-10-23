@@ -5,6 +5,8 @@ services:
     image: app
     ports:
     - '80:80'
+    networks:
+    - com
     env_file: details.env
     depends_on:
     - redis
