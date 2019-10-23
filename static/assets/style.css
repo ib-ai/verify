@@ -1,0 +1,4 @@
+/* Hides the submit button by default; until all the form requirements are met. */
+#ninja {
+    display: none;
+}

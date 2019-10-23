@@ -33,13 +33,12 @@ const routeIndex = require('./routes/index');
 const routeDiscord = require('./routes/discord');
 const routeLogin = require('./routes/login');
 const routeLogout = require('./routes/logout');
-const routeInfo = require('./routes/info');
 const routeVerify = require('./routes/verify');
 app.use('/discord', routeDiscord);
 app.use('/login', routeLogin);
 app.use('/logout', routeLogout);
-app.use('/info', routeInfo)
 app.use('/verify', routeVerify);
+app.use('/assets', express.static('static/assets'));
 app.use('/', routeIndex);
 
 /**

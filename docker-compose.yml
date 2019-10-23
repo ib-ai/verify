@@ -6,9 +6,13 @@ services:
     ports:
     - '80:80'
     env_file: details.env
+    depends_on:
+    - redis
   redis:
     image: redis
     volumes:
     - 'redis:/data'
 volumes:
   redis:
+networks:
+  com:

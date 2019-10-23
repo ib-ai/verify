@@ -1,5 +1,101 @@
 <!DOCTYPE html>
-<body>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>r/IBO Discord Server</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        <script src="/assets/jquery-3.4.1.min.js"></script>
+        <script src="/assets/checker.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    </head>
+    <body>
+    <section class="hero is-info">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">r/IBO Discord Server</h1>
+                <h2 class="subtitle">Online Verification System</h2>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-two-thirds content">
+                    <h1 class="title is-4">Rules</h1>
+                    <ol type="1">
+                        <li>Be polite & respectful at all times in accordance with the <a href="https://discordapp.com/guidelines">Discord Community Guidelines</a>.</li>
+                        <li>The posting of, or encouraging others to post, content forbidden under <a href="https://support.discordapp.com/hc/en-us/articles/360024871991-Discord-Partnership-Code-of-Conduct">Discord’s Code of Conduct for partnered servers</a> is prohibited.</li>
+                        <li>Academic dishonesty is strictly prohibited.</li>
+                        <li>Do not tag the entire staff team (<code>@Staff</code>) unless there is an urgent situation requiring an immediate response.</li>
+                        <li>‘Backseat moderating’ (attempting to assume the authority of a staff member) beyond gently reminding other users of the rules as-written is not permitted.</li>
+                        <li>Stay on topic in the channel you are in.</li>
+                        <li>Wait at least 15 minutes after asking an academic question before tagging the subject helpers in that subject’s channel.</li>
+                        <li>You must ask for staff permission before advertising anything.</li>
+                        <li>You must have a username/nickname that can be mentioned by typing it with a typical English keyboard.</li>
+                    </ol>
+                </div>
+                <div class="column">
+                    <h1 class="title is-4">FAQ</h1>
+                    <div class="level content">
+                        <p>
+                        <u>How does it work?</u>
+                        Once you have selected your year role and agreed to our rules, you can log in using Discord.
+                        Discord will then send us your user ID, and we will give you the respective roles, unlocking access to the server.
+                        </p>
+                    </div>
+                    <div class="level content">
+                        <p>
+                        <u>Is my data safe?</u>
+                        Yes. 
+                        We never receive your email or password, nor do we store your IP address.
+                        Discord sends us your user ID, which is not stored anywhere.
+                        </p>
+                    </div>
+                    <div class="level">
+                        <p>
+                        <u>I need help!</u>
+                        If you are having issues please send a DM to <code>@Mod-Mail#7450</code>.
+                        A memeber of staff will get back to you ASAP.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <form action="/verify">
+                <div class="field">
+                    <div class="label">What year role should we give you?</div>
+                    <div class="control">
+                        <div class="select">
+                            <select name="role" id="year-role">
+                                <option value="__select">Please select...</option>
+                                <option value="May 2020">I take my exams in May 2020</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p class="help">This is the role that best describes you in regards to the IB. This can be changed at a later point in time.</p>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <input type="checkbox" name="rules" id="rules">
+                            I agree to the server rules (shown above).
+                        </label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-link" id="ninja">Verify using Discord</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    </body>
+</html>
+<!-- <body>
     <form action="/verify" method="get">
     <select name="role">
         <option value="" disabled selected>Please select a role...</option>
@@ -8,4 +104,4 @@
     <input type="checkbox" name="agree" value="agree"> I accept the terms and conditions
     <input type="submit">
     </form>
-</body>
+</body> -->
