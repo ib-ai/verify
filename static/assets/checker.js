@@ -1,6 +1,5 @@
 // jQuery ready function - initialize event listeners.
 $(document).ready(function() {
-    console.log('hellow orld :)))');
     $('#year-role').change(function() {
         checkSubmitCriteria(); // check criteria when the dropdown has been changed.
     });
