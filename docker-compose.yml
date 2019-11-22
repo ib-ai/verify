@@ -3,7 +3,7 @@ services:
   ibdiscord_web:
     build: .
     ports:
-     - '5001:80'
+     - '80:5001'
     env_file: details.env
     depends_on:
      - redis
