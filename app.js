@@ -45,7 +45,7 @@ app.use('/', routeIndex);
  * Starts the server when the bot is ready.
  */
 bot.on('ready', () => {
-    app.listen(80);
+    app.listen(80, '0.0.0.0');
 });
 
 bot.login(token);
