@@ -1,16 +1,22 @@
 version: '3.5'
 services:
-  app:
+  ibdiscord_web:
     build: .
-    image: app
     ports:
-    - '80:80'
+     - '5001:80'
     env_file: details.env
     depends_on:
-    - redis
+     - redis
+    networks: 
+     - web-net_main
   redis:
     image: redis
     volumes:
-    - 'redis:/data'
+     - 'redis:/data'
+    networks:
+     - web-net_main
 volumes:
   redis:
+networks:
+  web-net_main:
+    external: true
