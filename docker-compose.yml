@@ -3,6 +3,7 @@ services:
   ibdiscord_web:
     build: .
     env_file: details.env
+    restart: always
     depends_on:
      - redis
     networks: 
