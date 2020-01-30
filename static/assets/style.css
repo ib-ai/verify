@@ -2,3 +2,324 @@
 #ninja {
     display: none;
 }
+
+body {
+    background-image: url("https://cdn.discordapp.com/banners/230296179991248896/751a600933613b111698f6a424327455.jpg?size=1024");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    margin: 0;
+    user-select: none;
+}
+
+a {
+    text-decoration: underline;
+    color: #00b0f4;
+}
+
+button, button:active, button:focus, button:active:focus, button:visited {
+    outline: none;
+}
+
+.switch {
+    float: right;
+}
+
+hr {
+    /* border: 2px solid #dcddde; */
+    border-color: #dcddde;
+}
+
+h1, #title {
+    display: table;
+    margin: auto;
+    font-size: 5vw;
+    font-weight: 600;
+    color: white;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.sub-heading {
+    display: inline-block;
+}
+
+#overlay {
+    background-color: rgba(51, 53, 57, 0.85);
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    height: 100vh;
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#overlay::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+#content {
+    color: #dcddde;
+    padding: 3%;
+    line-height: 175%;
+    font-size: 1.2vw;
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+#content::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+#check {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    width: 0.8vw; 
+    height: 0.8vw;
+    cursor: pointer;
+    /* -webkit-appearance: none; */
+    margin: 5px;
+    /* margin-right: 5px; */
+    background-color: white;
+    /* border: 2px solid #8e9297; */
+    /* appearance: none; */
+}
+
+/* select {
+    width: 10vw;
+    /* color: #dcddde; 
+} */
+
+
+/* Tried making the checkbox look fancy, failed smh
+
+input[type="checkbox"] {
+    position: relative;
+    cursor: pointer;
+}
+input[type="checkbox"]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 2px solid #8e9297;
+    background-color: white;
+    border-radius: 1px;
+    width: 16px;
+    height: 16px;
+}
+input[type="checkbox"]:checked:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 2px solid #8e9297;
+    background-color: #67db86;
+    border-radius: 1px;
+    width: 16px;
+    height: 16px;
+} */
+
+.rule {
+    font-weight: bold;
+}
+
+.ruleText {
+    display: none;
+    font-size: 0.875rem;
+    margin-left: 2px;
+    padding-left: 8px;
+    background: #2f3136;
+    border: 1px solid #202225;
+    border-radius: 4px;
+
+}
+
+.ping {
+    color: #7289da;
+    font-weight: normal;
+    background-color: rgba(114,137,218,.1);
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    cursor: pointer;
+    padding: 2px;
+    text-decoration: none;
+}
+
+.ping:hover {
+    color: white;
+    background-color: rgba(114,137,218,.7);
+}
+
+#adminPing {
+    color: #e67e22;
+    background-color: rgba(230, 125, 34, 0.1);
+}
+
+#adminPing:hover {
+    background-color: rgba(230, 125, 34, 0.3);
+}
+
+.inlineCode {
+    font-family: Consolas,Andale Mono WT,Andale Mono,Lucida Console,Lucida Sans Typewriter,DejaVu Sans Mono,Bitstream Vera Sans Mono,Liberation Mono,Nimbus Mono L,Monaco,Courier New,Courier,monospace;
+    font-size: 85%;
+    padding: 0.2em;
+    margin: -0.2em 0;
+    background-color: #202225;
+}
+
+.warning {
+    display: none;
+    color: #f04747;
+}
+
+.button {
+    display: table;
+    background-color: #f04747;
+    /* background-color: #43b581; */
+    border: none;
+    border-radius: 5px;
+    font-size: 150%;
+    padding: 1%;
+    width: 100%;
+    color: white;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    transition: 0.35s ease;
+}
+
+.button#verify {
+    /* display: none; */
+    background-color: #7289DA;
+}
+
+.themeSwitch {
+    margin-top: 20px;
+    float: right;
+    border-radius: 20px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    transition: 0ms;
+    background-image: url("/IBO-Discord-Web-Verification/assets/moon.svg");
+    background-size: contain;
+}
+
+.themeSwitch:hover {
+    background-color: #dbdbdb;
+}
+
+.themeSwitch:active {
+    background-color: #bbbbbb;
+}
+
+.btnImg {
+    width: 15px;
+    height: 15px;
+    margin-left: -1.5px;
+    margin-top: 2px;
+}
+
+
+.light h1, .light #title, .light #content {
+    color: #2e3338;
+}
+.light a {
+    color: #0067e0;
+}
+.light #ping {
+    background-color: #f1f3fb;
+}
+.light #overlay {
+    /* background-color: rgba(227, 229, 232, 0.85); */
+    background-color: rgba(242, 243, 245, 0.85);
+}
+.light .ruleText {
+    background: #c4c7cc;
+    color: black;
+}
+.light .inlineCode {
+    background-color: #929292;
+}
+.light hr {
+    border-color: #7289da;
+}
+.light .themeSwitch {
+    background-image: url("/IBO-Discord-Web-Verification/assets/sun.svg");
+    background-color: #333539;
+}
+.light .themeSwitch:hover {
+    background-color: #35373b;
+}
+.light .themeSwitch:active {
+    background-color: #252629;
+}
+
+@media only screen and (max-width: 7680px) {
+    h1, #title {
+        font-size: 4vw;
+    }
+    /* #content {
+        font-size: 300%;
+    } */
+}
+
+@media only screen and (max-width: 3840px) {
+    h1, #title {
+        font-size: 5vw;
+    }
+    /* #content {
+        font-size: 300%;
+    } */
+}
+
+/* @media only screen and (max-width: 2560px) {
+    #content {
+        font-size: 200%;
+    }
+} */
+
+@media only screen and (max-width: 1440px) {
+    #content {
+        font-size: 100%;
+    }
+    input[type="checkbox"] {
+        width: 1vw; 
+        height: 1vw;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    h1, #title {
+        font-size: 6vw;
+    }
+    #content {
+        font-size: 100%;
+    }
+    input[type="checkbox"] {
+        width: 1.8vw; 
+        height: 1.8vw;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    h1, #title {
+        font-size: 7.5vw;
+    }
+    input[type="checkbox"] {
+        width: 3.6vw; 
+        height: 3.6vw;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    h1, #title {
+        font-size: 7vw;
+    }
+    input[type="checkbox"] {
+        width: 4vw; 
+        height: 4vw;
+    }
+}

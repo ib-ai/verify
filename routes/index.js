@@ -8,7 +8,7 @@ module.exports = (request, response) => {
     if(request.session.auth) {
         filename = 'done.html';
     } else {
-        filename = 'verify.html';
+        filename = 'index.html';
     }
     response.sendFile(filename, { root: './static' });
 };
