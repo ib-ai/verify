@@ -10,12 +10,8 @@ services:
      - web-net_main
   redis:
     image: redis
-    volumes:
-     - 'redis:/data'
     networks:
      - web-net_main
-volumes:
-  redis:
 networks:
   web-net_main:
     external: true
