@@ -34,29 +34,46 @@ module.exports = (request, response) => {
             }})
             .then(res => res.json())
             .then(res => {
-                verify(res.id, request.session.role)
+                verify(res.id, request.session.role, request);
+                response.redirect('/');
             })
             .catch(error => {
                 response.send('Internal error. Please report this: geting user.');
                 console.log(error);
             });
-            response.redirect('/');
         })
         .catch(error => {
             response.send('Internal error. Please report this: getting token.');
             console.log(error);
-        })
+        });
 };
 
 /**
  * Adds the verified + year role to the user.
  * @param {string} user The user ID.
  * @param {string} role The role name.
+ * @param {session} request The request.
  */
-function verify(user, role) {
+function verify(user, role, request) {
     bot.fetchUser(user).then(user => {
         let guild = bot.guilds.get(server);
         bot.guilds.get(server).fetchMember(user).then(member => {
+            let now = new Date().getTime();
+            let aWeek = 7 * 24 * 3600 * 1000; // A week in milliseconds.
+            let aboutAWeekAgoWeekAgo = parseInt(now - aWeek); // Explicit integer parse.
+            let created = parseInt(user.createdAt.getTime()); // Explicit integer parse.
+
+            if(created > aboutAWeekAgoWeekAgo && global.lockdown) { // Younger than a week.
+                console.log(`Possible spam account: ${request.ip}.`);
+                request.session.blocked = true;
+                saveSession(request);
+                return;
+            } else {
+                // This is to override any previous remains from a lockdown.
+                request.session.blocked = false;
+                saveSession(request);
+            }
+
             let verified = lookup(guild, "Verified");
             let year = lookup(guild, role);
             if(verified != null && !member.roles.has(verified.id)) {
@@ -65,7 +82,7 @@ function verify(user, role) {
             if(year != null && !member.roles.has(year.id)) {
                 member.addRole(year);
             }
-            console.log(`Handled user ${user.id}.`);
+            console.log(`Verified user ${user.id} with IP address ${request.ip}.`);
         })
         .catch(_ => {
             console.log(`Could not find member for ${user.id}.`);
@@ -84,4 +101,14 @@ function verify(user, role) {
  */
 function lookup(guild, name) {
     return name != null ? guild.roles.find(role => role.name.toLowerCase() === name.toLowerCase()) : null;
+}
+
+/**
+ * Shorthand to save a session.
+ * @param {Request} request The request.
+ */
+function saveSession(request) {
+    request.session.save(error => {
+        console.log(error);
+    });
 }

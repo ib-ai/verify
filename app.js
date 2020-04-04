@@ -17,7 +17,7 @@ let storage = require('connect-redis')(session);
 app.use(
     session({
         store: new storage({client: redisClient}),
-        secret: 'skidaddle skidoodle, your dick is now a noodle', // Excuse me.
+        secret: process.env.CLIENT_SECRET, // Why not?
         resave: false,
         saveUninitialized: false,
         cookie: {
@@ -45,7 +45,10 @@ app.use('/', routeIndex);
  * Starts the server when the bot is ready.
  */
 bot.on('ready', () => {
+    console.log('Preparing webapp...');
     app.listen(80, '0.0.0.0');
+    console.log('Ready.');
 });
 
+console.log('Logging in bot...');
 bot.login(token);

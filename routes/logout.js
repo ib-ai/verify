@@ -2,7 +2,11 @@
  * Handles the /logout path.
  */
 module.exports = (request, response) => {
-    request.session.destroy(() => {
-        response.redirect('/');
-    })
+    if(global.lockdown) {
+        response.sendFile('unavailable.html', { root: './static' });
+    } else {
+        request.session.destroy(() => {
+            response.redirect('/');
+        });
+    }
 };
