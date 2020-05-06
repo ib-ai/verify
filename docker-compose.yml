@@ -1,17 +1,17 @@
 version: '3.5'
 services:
-  ibdiscord_web:
+  ibdiscord_verify:
     build: .
     env_file: details.env
     restart: always
     depends_on:
      - redis
     networks: 
-     - web-net_main
+     - web
+
   redis:
     image: redis
-    networks:
-     - web-net_main
+
 networks:
-  web-net_main:
+  web:
     external: true
