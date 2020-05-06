@@ -8,10 +8,15 @@ services:
      - redis
     networks: 
      - web
+     - backend
 
   redis:
     image: redis
+    networks: 
+     - backend
 
 networks:
+  backend:
+    external: false
   web:
     external: true
