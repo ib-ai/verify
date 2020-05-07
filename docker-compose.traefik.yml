@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  ibdiscord_verify:
+    build: .
+    env_file: details.env
+    restart: always
+    depends_on:
+     - redis
+    networks: 
+     - web
+     - backend
+    labels: 
+     - "traefik.enable=true"
+     - "traefik.http.routers.verify-web.rule=Host(`ibdiscord.team`) || Host(`www.ibdiscord.team`)"
+     - "traefik.http.routers.verify-web.entrypoints=web"
+     - "traefik.http.routers.verify-web.middlewares=redirect@file"
+     - "traefik.http.routers.verify-secured.rule=Host(`ibdiscord.team`) || Host(`www.ibdiscord.team`)"
+     - "traefik.http.routers.verify-secured.entrypoints=web-secured"
+     - "traefik.http.routers.verify-secured.tls.certresolver=mytlschallenge"
+
+  redis:
+    image: redis
+    networks: 
+     - backend
+
+networks:
+  backend:
+    external: false
+  web:
+    external: true
