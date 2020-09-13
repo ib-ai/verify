@@ -22,7 +22,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "form-data": "^2.5.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "redis": "^2.8.0",
     "url": "^0.11.0"
   }
