@@ -143,7 +143,7 @@ input[type="checkbox"]:checked:after {
 
 .ruleDisclaimer {
     font-size: 1.1vh;
-    line-height: 100%;
+    line-height: 136%;
 }
 
 .ping {
