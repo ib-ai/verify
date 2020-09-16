@@ -137,6 +137,15 @@ input[type="checkbox"]:checked:after {
 
 }
 
+.ruleAgree {
+    font-weight: bold;
+}
+
+.ruleDisclaimer {
+    font-size: 1.1vh;
+    line-height: 100%;
+}
+
 .ping {
     color: #7289da;
     font-weight: normal;
